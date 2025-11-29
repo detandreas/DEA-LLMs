@@ -1,0 +1,189 @@
+{
+    "status": 200,
+    "prompt_options": {
+        "parallel_queries": 1,
+        "prompt_length": 1000
+    },
+    "data": [
+        {
+            "id": "48e50f00-1fd1-4acc-b337-61078aa341e6",
+            "name": "GPT-5 (high)",
+            "slug": "gpt-5",
+            "release_date": "2025-08-07",
+            "model_creator": {
+                "id": "e67e56e3-15cd-43db-b679-da4660a69f41",
+                "name": "OpenAI",
+                "slug": "openai"
+            },
+            "evaluations": {
+                "artificial_analysis_intelligence_index": 68.5,
+                "artificial_analysis_coding_index": 52.7,
+                "artificial_analysis_math_index": 94.3,
+                "mmlu_pro": 0.871,
+                "gpqa": 0.854,
+                "hle": 0.265,
+                "livecodebench": 0.846,
+                "scicode": 0.429,
+                "math_500": 0.994,
+                "aime": 0.957,
+                "aime_25": 0.943,
+                "ifbench": 0.731,
+                "lcr": 0.756,
+                "terminalbench_hard": 0.305,
+                "tau2": 0.848
+            },
+            "pricing": {
+                "price_1m_blended_3_to_1": 3.438,
+                "price_1m_input_tokens": 1.25,
+                "price_1m_output_tokens": 10
+            },
+            "median_output_tokens_per_second": 98.19,
+            "median_time_to_first_token_seconds": 101.563,
+            "median_time_to_first_answer_token": 101.563
+        },
+        {
+            "id": "2660d74f-ce79-48a8-8b53-6e668e2071a2",
+            "name": "Claude Opus 4.5 (Reasoning)",
+            "slug": "claude-opus-4-5-thinking",
+            "release_date": "2025-11-24",
+            "model_creator": {
+                "id": "f0aa413f-e8ae-4fcd-9c48-0e049f4f3128",
+                "name": "Anthropic",
+                "slug": "anthropic"
+            },
+            "evaluations": {
+                "artificial_analysis_intelligence_index": 69.8,
+                "artificial_analysis_coding_index": 60.2,
+                "artificial_analysis_math_index": 91.3,
+                "mmlu_pro": 0.895,
+                "gpqa": 0.866,
+                "hle": 0.284,
+                "livecodebench": 0.871,
+                "scicode": 0.495,
+                "math_500": null,
+                "aime": null,
+                "aime_25": 0.913,
+                "ifbench": 0.58,
+                "lcr": 0.74,
+                "terminalbench_hard": 0.44,
+                "tau2": 0.895
+            },
+            "pricing": {
+                "price_1m_blended_3_to_1": 10,
+                "price_1m_input_tokens": 5,
+                "price_1m_output_tokens": 25
+            },
+            "median_output_tokens_per_second": 53.745,
+            "median_time_to_first_token_seconds": 1.917,
+            "median_time_to_first_answer_token": 39.13
+        },
+        {
+            "id": "d1122eff-ee85-4fdc-8a9f-23bee6590667",
+            "name": "Gemini 3 Pro Preview (high)",
+            "slug": "gemini-3-pro",
+            "release_date": "2025-11-18",
+            "model_creator": {
+                "id": "faddc6d9-2c14-445f-9b28-56726f59c793",
+                "name": "Google",
+                "slug": "google"
+            },
+            "evaluations": {
+                "artificial_analysis_intelligence_index": 72.8,
+                "artificial_analysis_coding_index": 62.3,
+                "artificial_analysis_math_index": 95.7,
+                "mmlu_pro": 0.898,
+                "gpqa": 0.908,
+                "hle": 0.372,
+                "livecodebench": 0.917,
+                "scicode": 0.561,
+                "math_500": null,
+                "aime": null,
+                "aime_25": 0.957,
+                "ifbench": 0.704,
+                "lcr": 0.707,
+                "terminalbench_hard": 0.39,
+                "tau2": 0.871
+            },
+            "pricing": {
+                "price_1m_blended_3_to_1": 4.5,
+                "price_1m_input_tokens": 2,
+                "price_1m_output_tokens": 12
+            },
+            "median_output_tokens_per_second": 129.806,
+            "median_time_to_first_token_seconds": 32.254,
+            "median_time_to_first_answer_token": 32.254
+        },
+        {
+            "id": "0a7dda4d-cc9c-4a90-abc1-abb5772c901b",
+            "name": "DeepSeek V3.1 Terminus (Reasoning)",
+            "slug": "deepseek-v3-1-terminus-reasoning",
+            "release_date": "2025-09-22",
+            "model_creator": {
+                "id": "58b835bf-4c87-4f87-a846-df4b692c6e7d",
+                "name": "DeepSeek",
+                "slug": "deepseek"
+            },
+            "evaluations": {
+                "artificial_analysis_intelligence_index": 57.7,
+                "artificial_analysis_coding_index": 49.6,
+                "artificial_analysis_math_index": 89.7,
+                "mmlu_pro": 0.851,
+                "gpqa": 0.792,
+                "hle": 0.152,
+                "livecodebench": 0.798,
+                "scicode": 0.406,
+                "math_500": null,
+                "aime": null,
+                "aime_25": 0.897,
+                "ifbench": 0.57,
+                "lcr": 0.65,
+                "terminalbench_hard": 0.284,
+                "tau2": 0.371
+            },
+            "pricing": {
+                "price_1m_blended_3_to_1": 0.8,
+                "price_1m_input_tokens": 0.4,
+                "price_1m_output_tokens": 2
+            },
+            "median_output_tokens_per_second": 0,
+            "median_time_to_first_token_seconds": 0,
+            "median_time_to_first_answer_token": 0
+        },
+        {
+            "id": "5ea94a4a-55ac-4ea1-8898-2b3971e94af6",
+            "name": "Grok 4",
+            "slug": "grok-4",
+            "release_date": "2025-07-10",
+            "model_creator": {
+                "id": "a1e3ddcf-d3e4-44a5-9e8f-029a69850875",
+                "name": "xAI",
+                "slug": "xai"
+            },
+            "evaluations": {
+                "artificial_analysis_intelligence_index": 65.3,
+                "artificial_analysis_coding_index": 55.1,
+                "artificial_analysis_math_index": 92.7,
+                "mmlu_pro": 0.866,
+                "gpqa": 0.877,
+                "hle": 0.239,
+                "livecodebench": 0.819,
+                "scicode": 0.457,
+                "math_500": 0.99,
+                "aime": 0.943,
+                "aime_25": 0.927,
+                "ifbench": 0.537,
+                "lcr": 0.68,
+                "terminalbench_hard": 0.376,
+                "tau2": 0.749
+            },
+            "pricing": {
+                "price_1m_blended_3_to_1": 6,
+                "price_1m_input_tokens": 3,
+                "price_1m_output_tokens": 15
+            },
+            "median_output_tokens_per_second": 36.093,
+            "median_time_to_first_token_seconds": 9.959,
+            "median_time_to_first_answer_token": 9.959
+        }
+    ]
+}

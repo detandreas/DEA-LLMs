@@ -1,0 +1,2 @@
+model,efficiency,is_efficient,weights,x_slack,y_slack,provider,release_date,price_blended,intelligence_index
+Grok 4.1 Fast (Reasoning),1.0,True,"[0.0, 0.0, 0.0, 0.0, 1.0]",[0.0],[0.0],xAI,2025-11-19,0.275,64.1
