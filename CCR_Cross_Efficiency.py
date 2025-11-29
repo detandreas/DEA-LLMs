@@ -190,7 +190,7 @@ def plot_frontier(results_df: pd.DataFrame):
 
 def main():
     """Κύρια συνάρτηση που εκτελεί όλη την ανάλυση."""
-    json_data = load_data("5models.json")
+    json_data = load_data("data/5models.json")
     
     df = prepare_data(json_data)
     print(df)
@@ -201,7 +201,7 @@ def main():
     
     print_results(results_df)
     
-    save_results(results_df, "dea_results.csv")
+    save_results(results_df, "results/dea_results.csv")
     
     plot_efficiency_comparison(results_df, dea)
     plot_frontier(results_df)

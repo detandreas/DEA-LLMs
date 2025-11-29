@@ -7,7 +7,7 @@ from Pyfrontier.frontier_model import MultipleDEA
 # Για inputs (έχουμε 1 input: price_blended)
 # Για outputs (έχουμε 1 output: intelligence_index)
 
-with open("5models.json", "r", encoding="utf-8") as f:
+with open("data/5models.json", "r", encoding="utf-8") as f:
     json_data = json.load(f)
 
 data = json_data["data"]
@@ -61,7 +61,7 @@ for idx, row in results_df.iterrows():
     print(f"  X Weight (input multiplier): {row['x_weight']}")
     print(f"  Y Weight (output multiplier): {row['y_weight']}")
 
-results_df.to_csv("dea_results.csv")
-print("\nΑποτελέσματα αποθηκεύτηκαν στο dea_results_CCR.csv")
+results_df.to_csv("results/dea_results.csv")
+print("\nΑποτελέσματα αποθηκεύτηκαν στο results/dea_results_CCR.csv")
 
 print(dea.cross_efficiency)

@@ -1,6 +1,0 @@
-model,efficiency,cross_efficiency,is_efficient,x_weight,y_weight,bias,provider,release_date,price_blended,intelligence_index
-GPT-5 (high),0.276248,0.2762279741187463,False,[0.290867],[0.004033],0.0,OpenAI,2025-08-07,3.438,68.5
-Claude Opus 4.5 (Reasoning),0.096776,0.09677897348171488,False,[0.1],[0.001386],0.0,Anthropic,2025-11-24,10.0,69.8
-Gemini 3 Pro Preview (high),0.224302,0.2242895844054906,False,[0.222222],[0.003081],0.0,Google,2025-11-18,4.5,72.8
-DeepSeek V3.1 Terminus (Reasoning),1.0,0.9999397340069751,True,[1.25],[0.017331],0.0,DeepSeek,2025-09-22,0.8,57.7
-Grok 4,0.150895,0.15088315275476274,False,[0.166667],[0.002311],0.0,xAI,2025-07-10,6.0,65.3

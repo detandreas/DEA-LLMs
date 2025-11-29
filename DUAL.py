@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from Pyfrontier.frontier_model import EnvelopDEA
 
-with open("5models.json", "r", encoding="utf-8") as f:
+with open("data/5models.json", "r", encoding="utf-8") as f:
     json_data = json.load(f)
 
 data = json_data["data"]
@@ -70,8 +70,8 @@ for idx, row in results_df.iterrows():
     print(f"  X Slack (input): {row['x_slack']}")
     print(f"  Y Slack (output): {row['y_slack']}")
 
-results_df.to_csv("dea_results.csv")
-print("\nΑποτελέσματα αποθηκεύτηκαν στο dea_results_DUAL.csv")
+results_df.to_csv("results/dea_results.csv")
+print("\nΑποτελέσματα αποθηκεύτηκαν στο results/dea_results_DUAL.csv")
 
 # Αποθήκευση μόνο των βέλτιστων λύσεων (efficiency = 1)
 optimal_solutions = results_df[results_df["efficiency"] == 1.0]
