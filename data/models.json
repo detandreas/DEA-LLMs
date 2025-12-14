@@ -400,42 +400,6 @@
             "median_output_tokens_per_second": 36.68,
             "median_time_to_first_token_seconds": 1.832,
             "median_time_to_first_answer_token": 56.357
-        },
-        {
-            "id": "ca04852c-eaae-4881-a208-f9b2ca3b7cd6",
-            "name": "o3-pro",
-            "slug": "o3-pro",
-            "release_date": "2025-06-10",
-            "model_creator": {
-                "id": "e67e56e3-15cd-43db-b679-da4660a69f41",
-                "name": "OpenAI",
-                "slug": "openai"
-            },
-            "evaluations": {
-                "artificial_analysis_intelligence_index": 65.3,
-                "artificial_analysis_coding_index": null,
-                "artificial_analysis_math_index": null,
-                "mmlu_pro": null,
-                "gpqa": 0.845,
-                "hle": null,
-                "livecodebench": null,
-                "scicode": null,
-                "math_500": null,
-                "aime": null,
-                "aime_25": null,
-                "ifbench": null,
-                "lcr": null,
-                "terminalbench_hard": null,
-                "tau2": null
-            },
-            "pricing": {
-                "price_1m_blended_3_to_1": 35,
-                "price_1m_input_tokens": 20,
-                "price_1m_output_tokens": 80
-            },
-            "median_output_tokens_per_second": 40.384,
-            "median_time_to_first_token_seconds": 70.905,
-            "median_time_to_first_answer_token": 70.905
         }
     ]
 }
