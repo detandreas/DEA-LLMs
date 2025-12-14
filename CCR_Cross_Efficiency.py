@@ -23,7 +23,12 @@ def prepare_data(json_data: dict) -> pd.DataFrame:
             "provider": element["model_creator"]["name"],
             "release_date": element["release_date"],
             "price_blended": element["pricing"]["price_1m_blended_3_to_1"],
-            "intelligence_index": element["evaluations"]["artificial_analysis_intelligence_index"]
+            "median_time_to_first_answer" : element["median_time_to_first_answer_token"],
+            "intelligence_index": element["evaluations"]["artificial_analysis_intelligence_index"],
+            "coding_index" : element["evaluations"]["artificial_analysis_coding_index"],
+            "math_index" : element["evaluations"]["artificial_analysis_math_index"],
+            "mmlu_pro" : element["evaluations"]["mmlu_pro"]
+
         })
     
     return pd.DataFrame(rows).set_index("model")
@@ -31,8 +36,13 @@ def prepare_data(json_data: dict) -> pd.DataFrame:
 
 def run_dea_analysis(df: pd.DataFrame) -> tuple:
     """Εκτελεί DEA ανάλυση και επιστρέφει το μοντέλο και τα αποτελέσματα."""
-    X = df[["price_blended"]].to_numpy()
-    Y = df[["intelligence_index"]].to_numpy()
+    # Inputs: price_blended, median_time_to_first_answer
+    X = df[["price_blended", "median_time_to_first_answer"]].to_numpy()
+    
+    # Outputs: intelligence_index, coding_index, math_index, mmlu_pro
+    # Φιλτράρουμε NaN values αν υπάρχουν
+    output_cols = ["intelligence_index", "coding_index", "math_index", "mmlu_pro"]
+    Y = df[output_cols].fillna(0).to_numpy()
     
     dea = MultipleDEA(frontier="CRS", orient="in")
     dea.fit(X, Y)
@@ -65,7 +75,9 @@ def print_results(results_df: pd.DataFrame):
     """Εκτυπώνει τα αποτελέσματα DEA."""
     print("\n=== Αποτελέσματα DEA ===")
     print(results_df[["efficiency", "cross_efficiency", "is_efficient", 
-                      "price_blended", "intelligence_index", "x_weight", "y_weight"]])
+                      "price_blended", "median_time_to_first_answer",
+                      "intelligence_index", "coding_index", "math_index", "mmlu_pro",
+                      "x_weight", "y_weight"]])
     
     print("\n=== Αναλυτικά Αποτελέσματα DEA ===")
     for idx, row in results_df.iterrows():
@@ -73,8 +85,16 @@ def print_results(results_df: pd.DataFrame):
         print(f"  Efficiency: {row['efficiency']:.6f}")
         print(f"  Cross Efficiency: {row['cross_efficiency']:.6f}")
         print(f"  Is Efficient: {row['is_efficient']}")
-        print(f"  X Weight (input multiplier): {row['x_weight']}")
-        print(f"  Y Weight (output multiplier): {row['y_weight']}")
+        print(f"  Inputs:")
+        print(f"    Price Blended: {row['price_blended']:.4f}")
+        print(f"    Median Time to First Answer: {row['median_time_to_first_answer']:.4f}")
+        print(f"  Outputs:")
+        print(f"    Intelligence Index: {row['intelligence_index']:.2f}" if pd.notna(row['intelligence_index']) else "    Intelligence Index: N/A")
+        print(f"    Coding Index: {row['coding_index']:.2f}" if pd.notna(row['coding_index']) else "    Coding Index: N/A")
+        print(f"    Math Index: {row['math_index']:.2f}" if pd.notna(row['math_index']) else "    Math Index: N/A")
+        print(f"    MMLU Pro: {row['mmlu_pro']:.4f}" if pd.notna(row['mmlu_pro']) else "    MMLU Pro: N/A")
+        print(f"  X Weight (input multipliers): {row['x_weight']}")
+        print(f"  Y Weight (output multipliers): {row['y_weight']}")
 
 
 def save_results(results_df: pd.DataFrame, filename: str = "dea_results.csv"):
@@ -179,9 +199,10 @@ def plot_frontier(results_df: pd.DataFrame):
     plt.ylim(bottom=0, top=max_y_rounded)
     plt.yticks(np.arange(0, max_y_rounded + 1, 5))
     
-    plt.xlabel("Price Blended (Input)", fontsize=12)
-    plt.ylabel("Intelligence Index (Output)", fontsize=12)
-    plt.title("DEA Frontier", fontsize=14, fontweight='bold')
+    plt.xlabel("Price Blended (Input 1)", fontsize=12)
+    plt.ylabel("Intelligence Index (Output 1)", fontsize=12)
+    plt.title("DEA Frontier - 2D Projection\n(Full analysis uses: 2 inputs, 4 outputs)", 
+              fontsize=14, fontweight='bold')
     plt.grid(True, alpha=0.3)
     plt.legend()
     plt.tight_layout()
@@ -190,7 +211,7 @@ def plot_frontier(results_df: pd.DataFrame):
 
 def main():
     """Κύρια συνάρτηση που εκτελεί όλη την ανάλυση."""
-    json_data = load_data("data/5models.json")
+    json_data = load_data("data/models.json")
     
     df = prepare_data(json_data)
     print(df)

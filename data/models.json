@@ -400,6 +400,78 @@
             "median_output_tokens_per_second": 36.68,
             "median_time_to_first_token_seconds": 1.832,
             "median_time_to_first_answer_token": 56.357
+        },
+        {
+            "id": "5ea94a4a-55ac-4ea1-8898-2b3971e94af6",
+            "name": "Grok 4",
+            "slug": "grok-4",
+            "release_date": "2025-07-10",
+            "model_creator": {
+                "id": "a1e3ddcf-d3e4-44a5-9e8f-029a69850875",
+                "name": "xAI",
+                "slug": "xai"
+            },
+            "evaluations": {
+                "artificial_analysis_intelligence_index": 65.3,
+                "artificial_analysis_coding_index": 55.1,
+                "artificial_analysis_math_index": 92.7,
+                "mmlu_pro": 0.866,
+                "gpqa": 0.877,
+                "hle": 0.239,
+                "livecodebench": 0.819,
+                "scicode": 0.457,
+                "math_500": 0.99,
+                "aime": 0.943,
+                "aime_25": 0.927,
+                "ifbench": 0.537,
+                "lcr": 0.68,
+                "terminalbench_hard": 0.376,
+                "tau2": 0.749
+            },
+            "pricing": {
+                "price_1m_blended_3_to_1": 6,
+                "price_1m_input_tokens": 3,
+                "price_1m_output_tokens": 15
+            },
+            "median_output_tokens_per_second": 30.86,
+            "median_time_to_first_token_seconds": 10.995,
+            "median_time_to_first_answer_token": 10.995
+        },
+        {
+            "id": "0d94dc87-12c8-4d4a-8d99-804ce3f17bc2",
+            "name": "Nova 2.0 Pro Preview (medium)",
+            "slug": "nova-2-0-pro-reasoning-medium",
+            "release_date": "2025-11-27",
+            "model_creator": {
+                "id": "bb5a4e55-7969-4ab4-8702-3b9fd6547dc2",
+                "name": "Amazon",
+                "slug": "aws"
+            },
+            "evaluations": {
+                "artificial_analysis_intelligence_index": 62.4,
+                "artificial_analysis_coding_index": 46.1,
+                "artificial_analysis_math_index": 89,
+                "mmlu_pro": 0.83,
+                "gpqa": 0.785,
+                "hle": 0.089,
+                "livecodebench": 0.73,
+                "scicode": 0.427,
+                "math_500": null,
+                "aime": null,
+                "aime_25": 0.89,
+                "ifbench": 0.79,
+                "lcr": 0.543,
+                "terminalbench_hard": 0.227,
+                "tau2": 0.927
+            },
+            "pricing": {
+                "price_1m_blended_3_to_1": 3.438,
+                "price_1m_input_tokens": 1.25,
+                "price_1m_output_tokens": 10
+            },
+            "median_output_tokens_per_second": 126.52,
+            "median_time_to_first_token_seconds": 22.778,
+            "median_time_to_first_answer_token": 38.585
         }
     ]
 }
