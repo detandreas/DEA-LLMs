@@ -7,13 +7,13 @@ import seaborn as sns
 
 
 def load_data(json_file: str) -> dict:
-    """Φορτώνει δεδομένα από JSON αρχείο."""
+    """Loads data from a JSON file."""
     with open(json_file, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
 def prepare_data(json_data: dict) -> pd.DataFrame:
-    """Προετοιμάζει DataFrame από JSON δεδομένα."""
+    """Prepares a DataFrame from JSON data."""
     data = json_data["data"]
     
     rows = []
@@ -35,7 +35,7 @@ def prepare_data(json_data: dict) -> pd.DataFrame:
 
 
 def run_dea_analysis(df: pd.DataFrame) -> tuple:
-    """Εκτελεί DEA ανάλυση και επιστρέφει το μοντέλο και τα αποτελέσματα."""
+    """Performs DEA analysis and returns the model and results."""
     # Inputs: price_blended, median_time_to_first_answer
     X = df[["price_blended", "median_time_to_first_answer"]].to_numpy()
     
@@ -51,7 +51,7 @@ def run_dea_analysis(df: pd.DataFrame) -> tuple:
 
 
 def create_results_dataframe(result, cross_efficiency_scores, df: pd.DataFrame) -> pd.DataFrame:
-    """Δημιουργεί DataFrame με τα αποτελέσματα DEA."""
+    """Creates a DataFrame with the DEA results."""
     results_data = []
     for i, r in enumerate(result):
         results_data.append({
@@ -72,7 +72,7 @@ def create_results_dataframe(result, cross_efficiency_scores, df: pd.DataFrame) 
 
 
 def print_results(results_df: pd.DataFrame):
-    """Εκτυπώνει τα αποτελέσματα DEA."""
+    """Prints the DEA results."""
     print("\n=== Αποτελέσματα DEA ===")
     print(results_df[["efficiency", "cross_efficiency", "is_efficient", 
                       "price_blended", "median_time_to_first_answer",
@@ -98,13 +98,13 @@ def print_results(results_df: pd.DataFrame):
 
 
 def save_results(results_df: pd.DataFrame, filename: str = "dea_results.csv"):
-    """Αποθηκεύει τα αποτελέσματα σε CSV αρχείο."""
+    """Saves the results in a CSV file."""
     results_df.to_csv(filename)
     print(f"\nΑποτελέσματα αποθηκεύτηκαν στο {filename}")
 
 
 def _calculate_extended_frontier(eff: pd.DataFrame, results_df: pd.DataFrame) -> tuple:
-    """Υπολογίζει την επεκταμένη frontier γραμμή."""
+    """Calculates the extended frontier line."""
     first_point = (eff["price_blended"].iloc[0], eff["intelligence_index"].iloc[0])
     
     # Κλίση από (0,0) στο πρώτο efficient point
@@ -140,37 +140,40 @@ def _calculate_extended_frontier(eff: pd.DataFrame, results_df: pd.DataFrame) ->
 
 
 def plot_efficiency_comparison(results_df: pd.DataFrame, dea):
-    """Δημιουργεί plot με bar chart και heatmap."""
+    """Creates plots with bar charts and heatmaps."""
     df_sorted = results_df.sort_values("efficiency", ascending=False)
     
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 6))
+    # Bar chart - separate figure
+    plt.figure(figsize=(12, 6))
+    plt.bar(df_sorted.index, df_sorted["efficiency"])
+    plt.ylabel("Efficiency score")
+    plt.xlabel("Model")
+    plt.xticks(rotation=45, ha="right")
+    plt.title("DEA Efficiency by Model")
+    plt.grid(axis='y', alpha=0.3)
+    plt.tight_layout()
+    plt.show()
     
-    ax1.bar(df_sorted.index, df_sorted["efficiency"])
-    ax1.set_ylabel("Efficiency score")
-    ax1.set_xlabel("Model")
-    ax1.set_xticklabels(df_sorted.index, rotation=45, ha="right")
-    ax1.set_title("DEA Efficiency by Model")
-    ax1.grid(axis='y', alpha=0.3)
-    
+    # Heatmap - separate figure
     cross_efficiency_matrix = dea._cross_efficiency_matrix()
     cross_df = pd.DataFrame(
         cross_efficiency_matrix,
         index=results_df.index,
         columns=results_df.index
     )
+    plt.figure(figsize=(16, 12))
     sns.heatmap(cross_df, annot=True, fmt='.5f', cmap="viridis", 
-                cbar_kws={'label': 'Cross-Efficiency'}, ax=ax2)
-    ax2.set_title("Cross-Efficiency Matrix")
-    ax2.set_xlabel("Evaluated by DMU")
-    ax2.set_ylabel("DMU")
-    
+                cbar_kws={'label': 'Cross-Efficiency'})
+    plt.title("Cross-Efficiency Matrix")
+    plt.xlabel("Evaluated by DMU")
+    plt.ylabel("DMU")
     plt.tight_layout()
     plt.show()
 
 
 def plot_frontier(results_df: pd.DataFrame):
-    """Δημιουργεί plot με την efficient frontier."""
-    plt.figure(figsize=(10, 7))
+    """Creates a plot with the efficient frontier."""
+    plt.figure(figsize=(12, 7))
     
     plt.scatter(results_df["price_blended"], results_df["intelligence_index"], 
                 s=100, alpha=0.6, color='blue', edgecolors='black', linewidth=1)
@@ -210,7 +213,7 @@ def plot_frontier(results_df: pd.DataFrame):
 
 
 def main():
-    """Κύρια συνάρτηση που εκτελεί όλη την ανάλυση."""
+    """Main function that performs all the analysis."""
     json_data = load_data("data/models.json")
     
     df = prepare_data(json_data)
