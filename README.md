@@ -33,17 +33,18 @@ Model data is sourced from the [Artificial Analysis](https://artificialanalysis.
 
 ```
 DEA-LLMs/
-├── CCR_Cross_Efficiency.py   # Main analysis: CCR DEA + cross-efficiency + plots
+├── CCR_Cross_Efficiency.py   # Main pipeline: download → filter → DEA → plots
 ├── scripts/
 │   ├── CCR.py                # Prototype — 1-input / 1-output CCR model
 │   ├── DUAL.py               # Prototype — Envelop DEA (dual formulation)
-│   ├── findmodels.py         # Utility to filter models by index / price thresholds
-│   └── download_json.py      # Fetches fresh data from the API (gitignored; needs API key)
+│   ├── findmodels.py         # Standalone filter utility (thresholds on index & price)
+│   └── download_json.py      # Standalone API downloader (gitignored; needs API key)
 ├── data/
-│   ├── models.json           # Full model dataset used by the main script
-│   ├── models2.json          # Raw API download
+│   ├── models_latest.json    # Cached raw API download (auto-refreshed by main script)
+│   ├── models_frontier.json  # Filtered "similar capability" dataset (auto-generated)
+│   ├── models.json           # Legacy curated dataset (13 models)
 │   ├── 5models.json          # Small sample used by prototype scripts
-│   └── ...                   # Filtered subsets produced by findmodels.py
+│   └── ...                   # Other subsets produced by findmodels.py
 ├── images/                   # Saved chart exports
 └── results/                  # CSV outputs (gitignored)
 ```
@@ -69,25 +70,40 @@ pip install pandas numpy matplotlib seaborn Pyfrontier requests
 
 ## Usage
 
-### Run the main analysis
+### Run the full pipeline
 
 ```bash
+export ARTIFICIAL_ANALYSIS_API_KEY="your_key_here"   # optional; uses cache if unset
 python CCR_Cross_Efficiency.py
 ```
 
-This will:
-1. Load `data/models.json`
-2. Run the CCR DEA with cross-efficiency
-3. Print efficiency scores and input/output weights per model
-4. Display three plots (bar chart, cross-efficiency heatmap, 2-D frontier projection)
-5. Save results to `results/dea_results.csv`
+The script runs four stages end-to-end:
 
-### Refresh the dataset
+1. **Download** — fetches the latest model dataset from the Artificial Analysis API
+   and caches it to `data/models_latest.json`. Falls back to the cache if no API
+   key is set or the request fails.
+2. **Filter** — keeps only **frontier-tier comparable models** (intelligence
+   index ≥ 40, with positive price and latency, and a coding score). The result
+   is saved to `data/models_frontier.json` — the new "similar capability" dataset.
+3. **Evaluate** — runs the CCR DEA with cross-efficiency on the filtered set
+   and writes scores to `results/dea_results.csv`.
+4. **Plot** — renders three figures with adaptive sizing for any number of
+   models (see *Adaptive Plotting* below).
 
-```bash
-export ARTIFICIAL_ANALYSIS_API_KEY="your_key_here"
-python scripts/download_json.py
-```
+To tune the filter, edit `INTELLIGENCE_THRESHOLD` at the top of the script
+(default = 40.0). At threshold 40 you get ~58 models; at 45 you get ~34;
+at 50 you get the top ~18.
+
+### Adaptive Plotting
+
+All three charts scale automatically with the number of models so labels never
+overlap, even at n = 70+:
+
+| Chart | Adaptive behaviour |
+|---|---|
+| **Bar chart** | Width scales with *n* (capped at 28″); rotation 45→90° and font size 10→6 as *n* grows. |
+| **Heatmap** | Square size scales with *n* (capped at 24″); annotations are dropped past *n* > 30 (unreadable at that density). |
+| **Frontier (2-D)** | Log-scale x-axis (prices span orders of magnitude); only the upper-left envelope DMUs are labelled when *n* > 35; long names truncated. |
 
 ### Prototype scripts
 

@@ -1,0 +1,556 @@
+{
+    "status": 200,
+    "prompt_options": {
+        "parallel_queries": 1,
+        "prompt_length": 1000
+    },
+    "filter": {
+        "intelligence_threshold": 40.0,
+        "max_models": 15,
+        "candidates": 58,
+        "kept": 15,
+        "total": 507
+    },
+    "data": [
+        {
+            "id": "1f054429-397e-4fdb-9e71-67bc92c1735e",
+            "name": "GPT-5.5 (xhigh)",
+            "slug": "gpt-5-5",
+            "release_date": "2026-04-23",
+            "model_creator": {
+                "id": "e67e56e3-15cd-43db-b679-da4660a69f41",
+                "name": "OpenAI",
+                "slug": "openai"
+            },
+            "evaluations": {
+                "artificial_analysis_intelligence_index": 60.2,
+                "artificial_analysis_coding_index": 59.1,
+                "artificial_analysis_math_index": null,
+                "mmlu_pro": null,
+                "gpqa": 0.935,
+                "hle": 0.443,
+                "livecodebench": null,
+                "scicode": 0.561,
+                "math_500": null,
+                "aime": null,
+                "aime_25": null,
+                "ifbench": 0.759,
+                "lcr": 0.743,
+                "terminalbench_hard": 0.606,
+                "tau2": 0.939
+            },
+            "pricing": {
+                "price_1m_blended_3_to_1": 11.25,
+                "price_1m_input_tokens": 5,
+                "price_1m_output_tokens": 30
+            },
+            "median_output_tokens_per_second": 66.718,
+            "median_time_to_first_token_seconds": 43.609,
+            "median_time_to_first_answer_token": 43.609
+        },
+        {
+            "id": "b13c1257-d746-4027-8fc8-4892dc14701c",
+            "name": "GPT-5.5 (high)",
+            "slug": "gpt-5-5-high",
+            "release_date": "2026-04-23",
+            "model_creator": {
+                "id": "e67e56e3-15cd-43db-b679-da4660a69f41",
+                "name": "OpenAI",
+                "slug": "openai"
+            },
+            "evaluations": {
+                "artificial_analysis_intelligence_index": 58.9,
+                "artificial_analysis_coding_index": 58.5,
+                "artificial_analysis_math_index": null,
+                "mmlu_pro": null,
+                "gpqa": 0.932,
+                "hle": 0.43,
+                "livecodebench": null,
+                "scicode": 0.559,
+                "math_500": null,
+                "aime": null,
+                "aime_25": null,
+                "ifbench": 0.716,
+                "lcr": 0.733,
+                "terminalbench_hard": 0.598,
+                "tau2": 0.93
+            },
+            "pricing": {
+                "price_1m_blended_3_to_1": 11.25,
+                "price_1m_input_tokens": 5,
+                "price_1m_output_tokens": 30
+            },
+            "median_output_tokens_per_second": 59.29,
+            "median_time_to_first_token_seconds": 22.27,
+            "median_time_to_first_answer_token": 22.27
+        },
+        {
+            "id": "e9a09db3-8fd6-41dd-ba2f-20e0a2bff7f2",
+            "name": "Claude Opus 4.7 (Adaptive Reasoning, Max Effort)",
+            "slug": "claude-opus-4-7",
+            "release_date": "2026-04-16",
+            "model_creator": {
+                "id": "f0aa413f-e8ae-4fcd-9c48-0e049f4f3128",
+                "name": "Anthropic",
+                "slug": "anthropic"
+            },
+            "evaluations": {
+                "artificial_analysis_intelligence_index": 57.3,
+                "artificial_analysis_coding_index": 52.5,
+                "artificial_analysis_math_index": null,
+                "mmlu_pro": null,
+                "gpqa": 0.914,
+                "hle": 0.396,
+                "livecodebench": null,
+                "scicode": 0.545,
+                "math_500": null,
+                "aime": null,
+                "aime_25": null,
+                "ifbench": 0.586,
+                "lcr": 0.703,
+                "terminalbench_hard": 0.515,
+                "tau2": 0.886
+            },
+            "pricing": {
+                "price_1m_blended_3_to_1": 10,
+                "price_1m_input_tokens": 5,
+                "price_1m_output_tokens": 25
+            },
+            "median_output_tokens_per_second": 53.214,
+            "median_time_to_first_token_seconds": 13.883,
+            "median_time_to_first_answer_token": 13.883
+        },
+        {
+            "id": "bbd93ebe-80da-4594-bb19-61e69d0331df",
+            "name": "Gemini 3.1 Pro Preview",
+            "slug": "gemini-3-1-pro-preview",
+            "release_date": "2026-02-19",
+            "model_creator": {
+                "id": "faddc6d9-2c14-445f-9b28-56726f59c793",
+                "name": "Google",
+                "slug": "google"
+            },
+            "evaluations": {
+                "artificial_analysis_intelligence_index": 57.2,
+                "artificial_analysis_coding_index": 55.5,
+                "artificial_analysis_math_index": null,
+                "mmlu_pro": null,
+                "gpqa": 0.941,
+                "hle": 0.447,
+                "livecodebench": null,
+                "scicode": 0.589,
+                "math_500": null,
+                "aime": null,
+                "aime_25": null,
+                "ifbench": 0.771,
+                "lcr": 0.727,
+                "terminalbench_hard": 0.538,
+                "tau2": 0.956
+            },
+            "pricing": {
+                "price_1m_blended_3_to_1": 4.5,
+                "price_1m_input_tokens": 2,
+                "price_1m_output_tokens": 12
+            },
+            "median_output_tokens_per_second": 131.639,
+            "median_time_to_first_token_seconds": 22.003,
+            "median_time_to_first_answer_token": 22.003
+        },
+        {
+            "id": "a89c4b28-2d8c-456e-88ea-255fb51fd2b6",
+            "name": "GPT-5.4 (xhigh)",
+            "slug": "gpt-5-4",
+            "release_date": "2026-03-05",
+            "model_creator": {
+                "id": "e67e56e3-15cd-43db-b679-da4660a69f41",
+                "name": "OpenAI",
+                "slug": "openai"
+            },
+            "evaluations": {
+                "artificial_analysis_intelligence_index": 56.8,
+                "artificial_analysis_coding_index": 57.3,
+                "artificial_analysis_math_index": null,
+                "mmlu_pro": null,
+                "gpqa": 0.92,
+                "hle": 0.416,
+                "livecodebench": null,
+                "scicode": 0.566,
+                "math_500": null,
+                "aime": null,
+                "aime_25": null,
+                "ifbench": 0.739,
+                "lcr": 0.74,
+                "terminalbench_hard": 0.576,
+                "tau2": 0.871
+            },
+            "pricing": {
+                "price_1m_blended_3_to_1": 5.625,
+                "price_1m_input_tokens": 2.5,
+                "price_1m_output_tokens": 15
+            },
+            "median_output_tokens_per_second": 93.322,
+            "median_time_to_first_token_seconds": 164.12,
+            "median_time_to_first_answer_token": 164.12
+        },
+        {
+            "id": "6b79f899-e3c0-45f6-923c-243faccdb2fc",
+            "name": "GPT-5.5 (medium)",
+            "slug": "gpt-5-5-medium",
+            "release_date": "2026-04-23",
+            "model_creator": {
+                "id": "e67e56e3-15cd-43db-b679-da4660a69f41",
+                "name": "OpenAI",
+                "slug": "openai"
+            },
+            "evaluations": {
+                "artificial_analysis_intelligence_index": 56.7,
+                "artificial_analysis_coding_index": 56.2,
+                "artificial_analysis_math_index": null,
+                "mmlu_pro": null,
+                "gpqa": 0.926,
+                "hle": 0.406,
+                "livecodebench": null,
+                "scicode": 0.535,
+                "math_500": null,
+                "aime": null,
+                "aime_25": null,
+                "ifbench": 0.71,
+                "lcr": 0.723,
+                "terminalbench_hard": 0.576,
+                "tau2": 0.918
+            },
+            "pricing": {
+                "price_1m_blended_3_to_1": 11.25,
+                "price_1m_input_tokens": 5,
+                "price_1m_output_tokens": 30
+            },
+            "median_output_tokens_per_second": 57.712,
+            "median_time_to_first_token_seconds": 5.162,
+            "median_time_to_first_answer_token": 5.162
+        },
+        {
+            "id": "0de67206-4d36-4d10-b8f6-cf37fa747a03",
+            "name": "Kimi K2.6",
+            "slug": "kimi-k2-6",
+            "release_date": "2026-04-20",
+            "model_creator": {
+                "id": "0a177021-87dd-4250-9a37-f01df196bfe0",
+                "name": "Kimi",
+                "slug": "kimi"
+            },
+            "evaluations": {
+                "artificial_analysis_intelligence_index": 53.9,
+                "artificial_analysis_coding_index": 47.1,
+                "artificial_analysis_math_index": null,
+                "mmlu_pro": null,
+                "gpqa": 0.911,
+                "hle": 0.359,
+                "livecodebench": null,
+                "scicode": 0.535,
+                "math_500": null,
+                "aime": null,
+                "aime_25": null,
+                "ifbench": 0.76,
+                "lcr": 0.697,
+                "terminalbench_hard": 0.439,
+                "tau2": 0.959
+            },
+            "pricing": {
+                "price_1m_blended_3_to_1": 1.712,
+                "price_1m_input_tokens": 0.95,
+                "price_1m_output_tokens": 4
+            },
+            "median_output_tokens_per_second": 33.292,
+            "median_time_to_first_token_seconds": 1.162,
+            "median_time_to_first_answer_token": 134.858
+        },
+        {
+            "id": "00f1248e-78e3-4230-8dc8-5e13ba8645e2",
+            "name": "MiMo-V2.5-Pro",
+            "slug": "mimo-v2-5-pro",
+            "release_date": "2026-04-22",
+            "model_creator": {
+                "id": "5147c8b4-61d5-4070-9324-8adf8aa144c2",
+                "name": "Xiaomi",
+                "slug": "xiaomi"
+            },
+            "evaluations": {
+                "artificial_analysis_intelligence_index": 53.8,
+                "artificial_analysis_coding_index": 45.5,
+                "artificial_analysis_math_index": null,
+                "mmlu_pro": null,
+                "gpqa": 0.866,
+                "hle": 0.338,
+                "livecodebench": null,
+                "scicode": 0.502,
+                "math_500": null,
+                "aime": null,
+                "aime_25": null,
+                "ifbench": 0.799,
+                "lcr": 0.733,
+                "terminalbench_hard": 0.432,
+                "tau2": 0.942
+            },
+            "pricing": {
+                "price_1m_blended_3_to_1": 1.5,
+                "price_1m_input_tokens": 1,
+                "price_1m_output_tokens": 3
+            },
+            "median_output_tokens_per_second": 60.018,
+            "median_time_to_first_token_seconds": 2.431,
+            "median_time_to_first_answer_token": 35.755
+        },
+        {
+            "id": "59b5b14b-5365-4ee7-824a-18a8e6309644",
+            "name": "GPT-5.3 Codex (xhigh)",
+            "slug": "gpt-5-3-codex",
+            "release_date": "2026-02-05",
+            "model_creator": {
+                "id": "e67e56e3-15cd-43db-b679-da4660a69f41",
+                "name": "OpenAI",
+                "slug": "openai"
+            },
+            "evaluations": {
+                "artificial_analysis_intelligence_index": 53.6,
+                "artificial_analysis_coding_index": 53.1,
+                "artificial_analysis_math_index": null,
+                "mmlu_pro": null,
+                "gpqa": 0.915,
+                "hle": 0.399,
+                "livecodebench": null,
+                "scicode": 0.532,
+                "math_500": null,
+                "aime": null,
+                "aime_25": null,
+                "ifbench": 0.754,
+                "lcr": 0.74,
+                "terminalbench_hard": 0.53,
+                "tau2": 0.86
+            },
+            "pricing": {
+                "price_1m_blended_3_to_1": 4.813,
+                "price_1m_input_tokens": 1.75,
+                "price_1m_output_tokens": 14
+            },
+            "median_output_tokens_per_second": 91.389,
+            "median_time_to_first_token_seconds": 72.305,
+            "median_time_to_first_answer_token": 72.305
+        },
+        {
+            "id": "53c98840-47af-49aa-94e6-469fb17e9a1b",
+            "name": "Claude Opus 4.6 (Adaptive Reasoning, Max Effort)",
+            "slug": "claude-opus-4-6-adaptive",
+            "release_date": "2026-02-05",
+            "model_creator": {
+                "id": "f0aa413f-e8ae-4fcd-9c48-0e049f4f3128",
+                "name": "Anthropic",
+                "slug": "anthropic"
+            },
+            "evaluations": {
+                "artificial_analysis_intelligence_index": 53,
+                "artificial_analysis_coding_index": 48.1,
+                "artificial_analysis_math_index": null,
+                "mmlu_pro": null,
+                "gpqa": 0.896,
+                "hle": 0.367,
+                "livecodebench": null,
+                "scicode": 0.519,
+                "math_500": null,
+                "aime": null,
+                "aime_25": null,
+                "ifbench": 0.531,
+                "lcr": 0.707,
+                "terminalbench_hard": 0.462,
+                "tau2": 0.921
+            },
+            "pricing": {
+                "price_1m_blended_3_to_1": 10,
+                "price_1m_input_tokens": 5,
+                "price_1m_output_tokens": 25
+            },
+            "median_output_tokens_per_second": 51.3,
+            "median_time_to_first_token_seconds": 13.467,
+            "median_time_to_first_answer_token": 13.467
+        },
+        {
+            "id": "2fa8e143-77a8-4d05-bfa8-d3b54634c00f",
+            "name": "Claude Opus 4.7 (Non-reasoning, High Effort)",
+            "slug": "claude-opus-4-7-non-reasoning",
+            "release_date": "2026-04-16",
+            "model_creator": {
+                "id": "f0aa413f-e8ae-4fcd-9c48-0e049f4f3128",
+                "name": "Anthropic",
+                "slug": "anthropic"
+            },
+            "evaluations": {
+                "artificial_analysis_intelligence_index": 51.8,
+                "artificial_analysis_coding_index": 53.1,
+                "artificial_analysis_math_index": null,
+                "mmlu_pro": null,
+                "gpqa": 0.885,
+                "hle": 0.312,
+                "livecodebench": null,
+                "scicode": 0.501,
+                "math_500": null,
+                "aime": null,
+                "aime_25": null,
+                "ifbench": 0.436,
+                "lcr": 0.67,
+                "terminalbench_hard": 0.545,
+                "tau2": 0.74
+            },
+            "pricing": {
+                "price_1m_blended_3_to_1": 10,
+                "price_1m_input_tokens": 5,
+                "price_1m_output_tokens": 25
+            },
+            "median_output_tokens_per_second": 43.082,
+            "median_time_to_first_token_seconds": 1.391,
+            "median_time_to_first_answer_token": 1.391
+        },
+        {
+            "id": "6000692c-f9a6-47f8-a5c0-e0874ac488bb",
+            "name": "Qwen3.6 Max Preview",
+            "slug": "qwen3-6-max",
+            "release_date": "2026-04-20",
+            "model_creator": {
+                "id": "d874d370-74d3-4fa0-ba00-5272f92f946b",
+                "name": "Alibaba",
+                "slug": "alibaba"
+            },
+            "evaluations": {
+                "artificial_analysis_intelligence_index": 51.8,
+                "artificial_analysis_coding_index": 44.9,
+                "artificial_analysis_math_index": null,
+                "mmlu_pro": null,
+                "gpqa": 0.888,
+                "hle": 0.289,
+                "livecodebench": null,
+                "scicode": 0.469,
+                "math_500": null,
+                "aime": null,
+                "aime_25": null,
+                "ifbench": 0.766,
+                "lcr": 0.697,
+                "terminalbench_hard": 0.439,
+                "tau2": 0.959
+            },
+            "pricing": {
+                "price_1m_blended_3_to_1": 2.925,
+                "price_1m_input_tokens": 1.3,
+                "price_1m_output_tokens": 7.8
+            },
+            "median_output_tokens_per_second": 33.335,
+            "median_time_to_first_token_seconds": 2.125,
+            "median_time_to_first_answer_token": 62.121
+        },
+        {
+            "id": "df8d14e0-3997-4e4d-b4ad-9c047acc9c69",
+            "name": "Claude Sonnet 4.6 (Adaptive Reasoning, Max Effort)",
+            "slug": "claude-sonnet-4-6-adaptive",
+            "release_date": "2026-02-17",
+            "model_creator": {
+                "id": "f0aa413f-e8ae-4fcd-9c48-0e049f4f3128",
+                "name": "Anthropic",
+                "slug": "anthropic"
+            },
+            "evaluations": {
+                "artificial_analysis_intelligence_index": 51.7,
+                "artificial_analysis_coding_index": 50.9,
+                "artificial_analysis_math_index": null,
+                "mmlu_pro": null,
+                "gpqa": 0.875,
+                "hle": 0.3,
+                "livecodebench": null,
+                "scicode": 0.468,
+                "math_500": null,
+                "aime": null,
+                "aime_25": null,
+                "ifbench": 0.566,
+                "lcr": 0.707,
+                "terminalbench_hard": 0.53,
+                "tau2": 0.757
+            },
+            "pricing": {
+                "price_1m_blended_3_to_1": 6,
+                "price_1m_input_tokens": 3,
+                "price_1m_output_tokens": 15
+            },
+            "median_output_tokens_per_second": 69.469,
+            "median_time_to_first_token_seconds": 55.795,
+            "median_time_to_first_answer_token": 55.795
+        },
+        {
+            "id": "bf220674-68bd-43cc-a1b8-ce5ed4d2f18d",
+            "name": "DeepSeek V4 Pro (Reasoning, Max Effort)",
+            "slug": "deepseek-v4-pro",
+            "release_date": "2026-04-24",
+            "model_creator": {
+                "id": "58b835bf-4c87-4f87-a846-df4b692c6e7d",
+                "name": "DeepSeek",
+                "slug": "deepseek"
+            },
+            "evaluations": {
+                "artificial_analysis_intelligence_index": 51.5,
+                "artificial_analysis_coding_index": 47.5,
+                "artificial_analysis_math_index": null,
+                "mmlu_pro": null,
+                "gpqa": 0.888,
+                "hle": 0.359,
+                "livecodebench": null,
+                "scicode": 0.5,
+                "math_500": null,
+                "aime": null,
+                "aime_25": null,
+                "ifbench": 0.765,
+                "lcr": 0.663,
+                "terminalbench_hard": 0.462,
+                "tau2": 0.962
+            },
+            "pricing": {
+                "price_1m_blended_3_to_1": 2.175,
+                "price_1m_input_tokens": 1.74,
+                "price_1m_output_tokens": 3.48
+            },
+            "median_output_tokens_per_second": 34.285,
+            "median_time_to_first_token_seconds": 1.227,
+            "median_time_to_first_answer_token": 128.834
+        },
+        {
+            "id": "5aa1c578-af76-4b91-8699-cdd43582b3af",
+            "name": "GLM-5.1 (Reasoning)",
+            "slug": "glm-5-1",
+            "release_date": "2026-04-07",
+            "model_creator": {
+                "id": "67437eb6-7dc1-4e93-befd-22c8b8ec2065",
+                "name": "Z AI",
+                "slug": "zai"
+            },
+            "evaluations": {
+                "artificial_analysis_intelligence_index": 51.4,
+                "artificial_analysis_coding_index": 43.4,
+                "artificial_analysis_math_index": null,
+                "mmlu_pro": null,
+                "gpqa": 0.868,
+                "hle": 0.28,
+                "livecodebench": null,
+                "scicode": 0.438,
+                "math_500": null,
+                "aime": null,
+                "aime_25": null,
+                "ifbench": 0.763,
+                "lcr": 0.623,
+                "terminalbench_hard": 0.432,
+                "tau2": 0.977
+            },
+            "pricing": {
+                "price_1m_blended_3_to_1": 2.15,
+                "price_1m_input_tokens": 1.4,
+                "price_1m_output_tokens": 4.4
+            },
+            "median_output_tokens_per_second": 45.872,
+            "median_time_to_first_token_seconds": 0.644,
+            "median_time_to_first_answer_token": 83.288
+        }
+    ]
+}
