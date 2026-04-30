@@ -102,7 +102,7 @@ def save_models_to_json(models: list, output_file: str, original_data: dict = No
 
 def main():
     # Path to models2.json
-    json_file = Path(__file__).parent / 'data' / 'models2.json'
+    json_file = Path(__file__).parent.parent / 'data' / 'models2.json'
     
     # Read original data to preserve metadata
     with open(json_file, 'r', encoding='utf-8') as f:
@@ -130,7 +130,7 @@ def main():
     print(f"\nTotal: {len(matching_models)} models")
     
     # Save to new JSON file
-    output_file = Path(__file__).parent / 'data' / 'models_high_intelligence.json'
+    output_file = Path(__file__).parent.parent / 'data' / 'models_high_intelligence.json'
     save_models_to_json(matching_models, str(output_file), original_data)
     
     # Find models with intelligence_index > 50 and price > 0.6
@@ -165,7 +165,7 @@ def main():
     print(f"\nTotal: {len(matching_models_price)} models")
     
     # Save to another JSON file
-    output_file_price = Path(__file__).parent / 'data' / 'models_high_intelligence_price.json'
+    output_file_price = Path(__file__).parent.parent / 'data' / 'models_high_intelligence_price.json'
     save_models_to_json(matching_models_price, str(output_file_price), original_data)
 
 

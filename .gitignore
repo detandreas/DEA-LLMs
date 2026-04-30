@@ -1,3 +1,8 @@
 results/
 download_json.py
+scripts/download_json.py
+venv/
+__pycache__/
+*.pyc
 .DS_Store
+*.docx
